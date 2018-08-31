@@ -1,0 +1,27 @@
+.account-selector {
+  .account-option {
+    padding: 0.5em 1em;
+    & > a {
+      display: block;
+      color: $color-text;
+    }
+    &.selected {
+      background: $color-alt-bg;
+    }
+  }
+}
+.keypair {
+  & .public-key{
+    line-height: 1.8;
+  }
+  & .inplace-editor {
+    width: 20em;
+    max-width: 75%;
+    font-size: inherit;
+    height: 1.7em;
+    padding: 0.4rem;
+    margin: 0;
+    border: 1px solid rgba(0,0,0,0.2);
+    box-sizing: border-box;
+  }
+}

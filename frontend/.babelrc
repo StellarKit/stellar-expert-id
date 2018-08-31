@@ -1,0 +1,39 @@
+{
+  "comments": false,
+  "presets": [
+    "react",
+    [
+      "env",
+      {
+        "targets": {
+          "browsers": [
+            "> 1%",
+            "not ie 11",
+            "not op_mini all"
+          ]
+        }
+      }
+    ]
+  ],
+  "plugins": [
+    "transform-decorators-legacy",
+    "transform-class-properties",
+    "transform-object-rest-spread",
+    "syntax-dynamic-import"
+  ],
+  "env": {
+    "test": {
+      "presets": [
+        "react",
+        [
+          "env",
+          {
+            "targets": {
+              "node": "current"
+            }
+          }
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,60 @@
+.dd-wrapper {
+  display: inline-block;
+  position: relative;
+
+  & .dd-header {
+    white-space: nowrap;
+
+    & .fa {
+      font-size: 1em;
+      height: 1em;
+      line-height: 1;
+      padding-left: 0.3em;
+    }
+
+    & .dd-header-title {
+      display: inline-block;
+    }
+  }
+
+  & .dd-list {
+    position: absolute;
+    visibility: hidden;
+    top: 0.8em;
+    min-width: 100%;
+    background: #FFF;
+    border: 1px solid #BDBFC0;
+    border-radius: 2px;
+    box-shadow: 2px 3px 6px -1px rgba(0, 0, 0, .3)
+  }
+
+  &:hover {
+    a {
+      color: $color-highlight;
+    }
+    .dd-list {
+      visibility: visible;
+    }
+  }
+
+  & .dd-list-item {
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+
+    & a {
+      padding: 0.5em 1em;
+      display: block;
+      color: inherit;
+      white-space: nowrap;
+
+      &:hover {
+        background: $color-alt-bg
+      }
+      &.selected {
+        cursor: default;
+        background: $color-alt-bg;
+      }
+    }
+  }
+}

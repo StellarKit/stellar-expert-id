@@ -1,0 +1,64 @@
+// Base
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// Set box-sizing globally to handle padding and border widths
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+// The base font-size is set at 62.5% for having the convenience
+// of sizing rems in a way that is similar to using px: 1.6rem = 16px
+html {
+  font-size: 62.5%;
+  height: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+// Default body styles
+body {
+  color: $color-text;
+  background: $color-bg;
+  font-family: $main-font;
+  font-size: 1.6em;
+  // Currently ems cause chrome bug misinterpreting rems on body element
+  font-weight: 300;
+  letter-spacing: 0.01em;
+  line-height: 1.4285em;
+  height: 100%;
+  overflow-x: hidden;
+  min-width: 320px;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: $color-selection;
+  color: $color-text;
+}
+
+// Image
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+img {
+  max-width: 100%;
+}
+
+// Link
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+a {
+  color: $color-primary;
+  text-decoration: none;
+  &:focus,
+  &:hover {
+    color: lighten(saturate($color-primary, 20%), 10%);
+  }
+}
+
+hr {
+  border: none;
+  border-top: 1px solid $color-secondary;
+}

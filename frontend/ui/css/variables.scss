@@ -1,0 +1,18 @@
+$main-font: ClearSans, Arial, Helvetica, sans-serif;
+$mono-font: Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+
+$color-bg: #FFF !default;
+$color-alt-bg: #D4EEF7 !default;
+$color-text: #333 !default;
+$color-primary: #0691B7 !default;
+$color-highlight: #08B5E5 !default;
+$color-selection: $color-alt-bg !default;
+$color-secondary: #718391 !default;
+$color-dimmed: #999 !default;
+$color-contrast-border: #BDBFC0;
+$color-lightbox-bg: rgba(0,0,0,0.5);
+$color-alert: #E34227 !default;
+
+$input-border-radius: 0.21rem;
+
+$mobile-browser-width: 40rem;

@@ -1,0 +1,69 @@
+// Spacing
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+.button,
+button,
+dd,
+dt,
+li {
+  margin-bottom: 1rem;
+}
+
+fieldset,
+input,
+select,
+textarea {
+  margin-bottom: 1.5rem;
+}
+
+blockquote,
+dl,
+figure,
+ol,
+p,
+pre,
+table {
+  margin-bottom: 1.5rem;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0.5em 0;
+}
+
+.space {
+  margin-top: 2rem;
+}
+
+.double-space {
+  margin-top: 4rem;
+}
+
+.block-indent {
+  padding-left: 3rem;
+}
+
+.block-indent-screen {
+  padding-left: 3rem;
+}
+
+@media (max-width: $mobile-browser-width) {
+  .block-indent-screen {
+    padding-left: 0;
+  }
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.word-break {
+  word-break: break-all;
+}
+
+.text-overflow {
+  max-width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

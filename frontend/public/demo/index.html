@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>StellarExpert ID Demo</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no"/>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <link type="text/css" rel="stylesheet" href="demo.css">
+    <script src="intent.id.stellar.expert.js"></script>
+    <link type="text/css" rel="stylesheet" href="highlight/darcula.css">
+    <script src="highlight/highlight.pack.js"></script>
+    <script src="demo.js"></script>
+</head>
+<body>
+<div class="header">
+    <div class="container">
+        <h1>StellarExpert ID Demo</h1>
+    </div>
+</div>
+<div class="container" style="text-align: justify">
+    <p/>
+    <b>StellarExpert ID</b> provides a safe and reliable way to use your Stellar accounts without trusting anyone
+    with secret keys. It works similar to the hardware wallet, but secret keys are encrypted
+    with your password and stored in the browser instead of the external device.
+    <h3>Key features</h3>
+    <ul style="padding-left: 1em;">
+        <li>
+            <b>Secure key management</b> – your secret key is never exposed to third-party services.
+        </li>
+        <li>
+            <b>Two-factor authorization support</b> – provides another level of protection for your accounts.
+        </li>
+        <li>
+            <b>Secure transaction signing</b> – transactions are signed without exposing a secret key.
+        </li>
+        <li>
+            <b>Web apps Single Sign-On</b> – login to third-party websites, just like with Google or Facebook OAuth.
+        </li>
+        <li>
+            <b>Digital identity</b> – associate a nickname/email/avatar with your account or stay incognito.
+        </li>
+        <li>
+            <b>Multi-account support</b> – use multiple accounts and switch them when you need it.
+        </li>
+        <li>
+            <b>Trustlines creation</b> – anchor trustlines and token airdrops in one click.
+        </li>
+        <li>
+            <b>Message signing tools</b> – sign and verify arbitrary data with your private keys.
+        </li>
+        <li>
+            <b>Inflation voting</b> – vote for inflation pools without worries for your funds safety.
+        </li>
+        <li>
+            <b>Federation support</b> – make use of a human-friendly address for your account.
+        </li>
+        <li>
+            <b>Works everywhere</b> – seamless experience on desktops, smartphones, and tablets.
+        </li>
+    </ul>
+</div>
+
+<div class="container">
+    <div>
+        <h2>Setup</h2>
+        <div>
+            <pre><code class="js">import Intent from 'intent-stellar-expert-id'
+const intent = new Intent({
+    app_name: 'Demo',
+    app_description: 'Demo application - for testing purpose only'
+})</code></pre>
+        </div>
+    </div>
+
+    <div class="intent-block" id="public_key">
+        <h2>Account address</h2>
+        <div class="intent-description">
+            Requests account public key. Simple way of authentication for Stellar-related applications.
+            The response ensures that a user owns the corresponding secret key.
+        </div>
+        <pre><code class="js">intent.requestAddress()
+    .then(res => console.log(res.pubey))</code></pre>
+        <button class="request">Request account address</button>
+        <pre class="result"></pre>
+    </div>
+
+    <div class="intent-block" id="tx">
+        <h2>Transaction signature</h2>
+        <div class="intent-description">
+            Requests transaction signing. Allows to sign arbitrary Stellar transaction without any limitations.
+            Returns signed transaction envelope that can be submitted to the network or used for multi-sig coordination.
+        </div>
+        <pre><code>intent.signTransaction('AAAA...7LBA=')
+    .then(res => console.log(res.pubkey, res.xdr, res.signed_envelope_xdr, res.tx_signature))</code></pre>
+        <input type="hidden" name="xdr"
+               value="AAAAALPZeTF820NFDKBqBJo0dpb99l+TZnWIgxf3Y7k7hfVxAAAFeACPVIQAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAABAAAACGtsbDMyNDIzAAAADgAAAAAAAAAAAAAAALPZeTF820NFDKBqBJo0dpb99l+TZnWIgxf3Y7k7hfVxAAAAAAL68IAAAAABAAAAALPZeTF820NFDKBqBJo0dpb99l+TZnWIgxf3Y7k7hfVxAAAAAQAAAACz2XkxfNtDRQygagSaNHaW/fZfk2Z1iIMX92O5O4X1cQAAAAAAAAAAAJiWgAAAAAAAAAACAAAAAURERAAAAAAAs9l5MXzbQ0UMoGoEmjR2lv32X5NmdYiDF/djuTuF9XEAAAAAAvrwgAAAAACz2XkxfNtDRQygagSaNHaW/fZfk2Z1iIMX92O5O4X1cQAAAAJra2trawAAAAAAAAAAAAAAs9l5MXzbQ0UMoGoEmjR2lv32X5NmdYiDF/djuTuF9XEAAAAABycOAAAAAAEAAAAAAAAAAAAAAAMAAAAAAAAAAUREAAAAAAAAs9l5MXzbQ0UMoGoEmjR2lv32X5NmdYiDF/djuTuF9XEAAAAAIFNYSAAAAAwAAAABAAAAAAAAAAAAAAABAAAAALPZeTF820NFDKBqBJo0dpb99l+TZnWIgxf3Y7k7hfVxAAAAAwAAAAAAAAACREREREQAAAAAAAAAAAAAALPZeTF820NFDKBqBJo0dpb99l+TZnWIgxf3Y7k7hfVxAAAAAAAAAAAAAAABAAAAAQAAAAAAAAB7AAAAAAAAAAQAAAAAAAAAAVVTRAAAAAAAs9l5MXzbQ0UMoGoEmjR2lv32X5NmdYiDF/djuTuF9XEAAAAAAJiWgAAAAAEAAAABAAAAAQAAAACz2XkxfNtDRQygagSaNHaW/fZfk2Z1iIMX92O5O4X1cQAAAAUAAAABAAAAALPZeTF820NFDKBqBJo0dpb99l+TZnWIgxf3Y7k7hfVxAAAAAQAAAAIAAAABAAAAAQAAAAEAAAAEAAAAAQAAAAIAAAABAAAAAgAAAAEAAAACAAAAAQAAAAtleGFtcGxlLmNvbQAAAAABAAAAALPZeTF820NFDKBqBJo0dpb99l+TZnWIgxf3Y7k7hfVxAAAABAAAAAAAAAAGAAAAAUZGAAAAAAAAs9l5MXzbQ0UMoGoEmjR2lv32X5NmdYiDF/djuTuF9XF//////////wAAAAEAAAAAs9l5MXzbQ0UMoGoEmjR2lv32X5NmdYiDF/djuTuF9XEAAAAHAAAAALPZeTF820NFDKBqBJo0dpb99l+TZnWIgxf3Y7k7hfVxAAAAAURERAAAAAAAAAAAAAAAAAcAAAAAs9l5MXzbQ0UMoGoEmjR2lv32X5NmdYiDF/djuTuF9XEAAAABVVNEAAAAAAEAAAAAAAAACAAAAACz2XkxfNtDRQygagSaNHaW/fZfk2Z1iIMX92O5O4X1cQAAAAAAAAAJAAAAAAAAAAoAAAACZGQAAAAAAAEAAAACdnYAAAAAAAAAAAAKAAAAAmtrAAAAAAAAAAAAAAAAAAA="/>
+        <button class="request">Request transaction signature</button>
+        <a href="#" class="button request-encoded" target="_blank">SEP-0007 compatible link</a>
+        <pre class="result"></pre>
+    </div>
+
+    <div class="intent-block" id="trust">
+        <h2>Trustline creation</h2>
+        <div class="intent-description">
+            Requests user's permission to create a trustline to a given Stellar asset.
+            Gradually simplifies the process of creating trustlines for anchors, ICOs, and airdrops.
+        </div>
+        <pre><code>intent.trust('<span class="asset-code">USD</span>', 'GBRX...WHBI')
+    .then(res => console.log(res.asset_code, res.asset_issuer))</code></pre>
+        <input type="hidden" name="asset_code" value="">
+        <input type="hidden" name="asset_issuer" value="GBRX4HAU2DOYSTLIREFWK46CMP5ETYLUCUB3J4KHNI2GLQQSWUCLWHBI">
+        <button class="request">Establish trustline</button>
+        <pre class="result"></pre>
+    </div>
+
+    <div class="intent-block" id="inflation_vote">
+        <h2>Inflation vote</h2>
+        <div class="intent-description">
+            Requests inflation pool voting.
+            The easiest way to vote for the pool.
+        </div>
+        <pre><code>intent.inflationVote('GCCD...NAUT')
+    .then(res => console.log(res.destination, res.pubkey))</code></pre>
+        <input type="hidden" name="destination" value="GCCD6AJOYZCUAQLX32ZJF2MKFFAUJ53PVCFQI3RHWKL3V47QYE2BNAUT">
+        <button class="request">Vote for Lumenaut pool</button>
+        <pre class="result"></pre>
+    </div>
+
+    <div class="intent-block" id="sign_msg">
+        <h2>Arbitrary message signing/verification</h2>
+        <div class="intent-description">
+            Requests arbitrary data signing or verification.
+            Can be used to implement complex cases of identity/ownership verification.
+        </div>
+        <pre><code>intent.signMessage('text to sign')
+    .then(res => console.log(res.pubkey, res.message, res.message_signature))</code></pre>
+        <div>
+            <input type="text" name="message" value="message to sign" placeholder="a message to sign"/>
+        </div>
+        <button class="request">Sign message</button>
+        <pre class="result"></pre>
+    </div>
+    <p>
+    and verify it:
+    </p>
+    <div id="verify_msg">
+        <pre><code>intent.verifyMessage('text to sign', 'signature', 'public_key')
+    .then(res => console.log(res.confirmed, res.pubkey, res.message, res.message_signature))</code></pre>
+        <input type="hidden" name="message_signature"/>
+        <input type="hidden" name="message"/>
+        <button class="request" disabled="disabled">Verify message</button>
+        <pre class="result"></pre>
+    </div>
+
+    <div class="intent-block" id="basic_info">
+        <h2>User personal info</h2>
+        <div class="intent-description">
+            Requests user identity (email, avatar, etc) for Single-Sign-On logic.
+            User personal details can be used to set up an email list subscription or personalize the UI.
+        </div>
+        <pre><code>intent.requestPersonalInfo()
+    .then(res => console.log(res.info))</code></pre>
+        <button class="request">Request user personal info</button>
+        <pre class="result"></pre>
+    </div>
+
+    <div class="intent-block" id="authenticate">
+        <h2>Authentication</h2>
+        <div class="intent-description">
+            Requests Single-Sign-On authentication.
+            Can be used to sign up to Stellar-based applications.
+            Returns Stellar account public key, authentication token, and signature.
+        </div>
+        <pre><code>intent.authenticate()
+    .then(res => console.log(res.pubkey, res.token, res.token_signature))</code></pre>
+        <input type="hidden" name="token"/>
+        <button class="request">Authenticate user</button>
+        <pre class="result"></pre>
+    </div>
+</div>
+<footer class="dimmed text-center container">
+    <div class="copyright">
+        2018&nbsp;©&nbsp;StellarExpertID
+    </div>
+    <div>
+        by OrbitLens&emsp;
+        <a href="mailto:orbit.lens@gmail.com" target="_blank">
+            Contact by email
+        </a>&emsp;
+        <a href="https://twitter.com/orbitlens" target="_blank">
+            Follow on Twitter
+        </a>
+    </div>
+</footer>
+</body>
+</html>

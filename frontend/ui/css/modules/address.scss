@@ -1,0 +1,37 @@
+input.hash {
+  display: inline;
+  width: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border: 0;
+  padding: 0;
+}
+
+.address {
+  font-size: 1rem;
+  font-family: $mono-font;
+  margin-top: -2em;
+}
+
+.collapsible-address {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  justify-content: flex-start;
+  width: 8em;
+  font-size: 1.1em;
+  font-family: $mono-font;
+}
+
+.collapsible-address *:first-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 1;
+}
+
+.collapsible-address *:last-child {
+  flex-basis: content;
+  flex-grow: 0;
+  flex-shrink: 0;
+}

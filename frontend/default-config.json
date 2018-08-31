@@ -1,0 +1,14 @@
+{
+  "apiEndpoint": "http://localhost:4021",
+  "salt":"yUqz1t6ilWUn75lgjtbv",
+  "networks": {
+    "public": {
+      "explorer": "https://stellar.expert/explorer/public/",
+      "horizon": "https://horizon.stellar.org"
+    },
+    "testnet": {
+      "explorer": "https://stellar.expert/explorer/testnet/",
+      "horizon": "https://horizon-testnet.stellar.org"
+    }
+  }
+}

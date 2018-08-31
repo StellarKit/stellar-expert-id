@@ -1,0 +1,5 @@
+# Packages
+package-lock.json
+
+# Sourcemap files
+*.js.map

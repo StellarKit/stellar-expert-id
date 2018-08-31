@@ -1,0 +1,21 @@
+{
+  "comments": false,
+  "presets": [
+    [
+      "env",
+      {
+        "targets": {
+          "browsers": [
+            "> 1%",
+            "not ie 11",
+            "not op_mini all"
+          ]
+        }
+      }
+    ]
+  ],
+  "plugins": [
+    "syntax-dynamic-import",
+    "transform-class-properties"
+  ]
+}
