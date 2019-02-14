@@ -2,8 +2,7 @@
   "comments": false,
   "presets": [
     [
-      "env",
-      {
+      "@babel/preset-env", {
         "targets": {
           "browsers": [
             "> 1%",
